@@ -1,6 +1,6 @@
-# Lexiang Skill for Clawdbot
+# Lexiang Skill
 
-腾讯乐享知识库 API 技能包，用于 [Clawdbot](https://github.com/anthropics/clawdbot) AI Agent。
+腾讯乐享知识库 API 技能包，适用于各类 AI Agent（Clawdbot、Claude、Cursor、Codebuddy 等）。
 
 ## 功能
 
@@ -11,29 +11,35 @@
 - 📤 文件上传与下载
 - 📋 任务管理
 
-## 安装
+## 使用方式
+
+### 方式一：Clawdbot 安装
 
 ```bash
-clawdbot skills install github:anthropics/lexiang-skill
+clawdbot skills install github:ajaxhe/lexiang-skill
 ```
 
-## 配置
+### 方式二：其他 Agent
 
-在 `~/.clawdbot/clawdbot.json` 中添加：
+将 `SKILL.md` 文件内容作为 System Prompt 或 Context 提供给你的 AI Agent 即可。
+
+## 配置凭证
+
+### 环境变量方式
+
+```bash
+export LEXIANG_APP_KEY="your_app_key"
+export LEXIANG_APP_SECRET="your_app_secret"
+export LEXIANG_STAFF_ID="your_staff_id"
+```
+
+### 配置文件方式
 
 ```json
 {
-  "skills": {
-    "entries": {
-      "lexiang": {
-        "env": {
-          "LEXIANG_APP_KEY": "your_app_key",
-          "LEXIANG_APP_SECRET": "your_app_secret",
-          "LEXIANG_STAFF_ID": "your_staff_id"
-        }
-      }
-    }
-  }
+  "LEXIANG_APP_KEY": "your_app_key",
+  "LEXIANG_APP_SECRET": "your_app_secret",
+  "LEXIANG_STAFF_ID": "your_staff_id"
 }
 ```
 
